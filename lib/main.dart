@@ -1,0 +1,38 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:webpointtracker/views/loginpage.dart';
+import 'package:webpointtracker/views/point_tracker.dart';
+import 'package:webpointtracker/views/registerpage.dart';
+//import 'package:webpointtracker/views/point_tracker.dart';
+import 'package:webpointtracker/views/spring_feed_calculator.dart';
+import 'package:get/get.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: ()=> MyHomePage(title: "Work Place app")),
+        GetPage(name: "/loginpage", page: ()=> LoginPage()),
+        GetPage(name: "/registerpage", page: ()=> RegisterPage()),
+        GetPage(name: "/calculatorpage", page: () => SpringsCalculator(title: 'Calculator')),
+      ],
+      //home: MyHomePage(title: 'Point Tracker',),
+    );
+  }
+}
+
