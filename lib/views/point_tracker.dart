@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ElevatedButton(
                   onPressed: () {
-                    Get.toNamed("calculatorpage");
+                    Get.toNamed("splashpage");
                   }, child: Icon(Icons.arrow_back)),
               SizedBox(width: 10),
 

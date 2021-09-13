@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:webpointtracker/views/loginpage.dart';
 import 'package:webpointtracker/views/point_tracker.dart';
 import 'package:webpointtracker/views/registerpage.dart';
+import 'package:webpointtracker/views/splashpage.dart';
 //import 'package:webpointtracker/views/point_tracker.dart';
 import 'package:webpointtracker/views/spring_feed_calculator.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       getPages: [
         GetPage(name: "/", page: ()=> MyHomePage(title: "Work Place app")),
+        GetPage(name: "/splashpage", page: ()=> SplashScreen()),
         GetPage(name: "/loginpage", page: ()=> LoginPage()),
         GetPage(name: "/registerpage", page: ()=> RegisterPage()),
         GetPage(name: "/calculatorpage", page: () => SpringsCalculator(title: 'Calculator')),
