@@ -77,8 +77,8 @@ FirebaseAuth auth = FirebaseAuth.instance;
   }
 
 
-  void logOut(){
-  auth.signOut();
+  void logOut()async{
+  await auth.signOut();
   }
 
 

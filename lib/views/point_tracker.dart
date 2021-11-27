@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:webpointtracker/controllers/auth_controller.dart';
 
 import 'package:webpointtracker/views/pointviewlist.dart';
@@ -7,7 +7,6 @@ import 'package:webpointtracker/views/pointviewlist.dart';
 import 'package:intl/intl.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:webpointtracker/views/spring_feed_calculator.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -116,13 +115,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           dropdownValue, context);
                     });
                   },
-                  child: Icon(Icons.alarm_off)),
+                  child: Icon(Icons.save_sharp)),
               SizedBox(width: 10),
 
               ElevatedButton(
                   onPressed: () {
                     AuthController.instance.logOut();
-                  }, child: Icon(Icons.arrow_back)),
+                  }, child: Icon(Icons.account_box_outlined)),
               SizedBox(width: 10),
 
             ],
