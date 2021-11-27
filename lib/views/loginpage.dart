@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:webpointtracker/controllers/auth_controller.dart';
+import 'package:webpointtracker/views/registerpage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -59,16 +61,26 @@ class _LoginPageState extends State<LoginPage> {
                 Expanded(
                   flex: 4,
                     child: ElevatedButton(child: Text("login"),onPressed: () {
-
+                      AuthController.instance.login(emailController.text.trim(), passwordController.text.trim());
                     },)),
                 SizedBox(width: 20,),
                 Expanded(
                     flex: 4,
-                    child: ElevatedButton(child: Text("Create Account"),onPressed: () {
-                      AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+                    child: Row(
+                      children: [
+                        Text("Dont't have and account?"),
 
-                    },)),
+                        GestureDetector(
+                          onTap: (){
+                            Get.offAll(() => RegisterPage());
+                          },
+                          child: Text("Create",style: TextStyle(color: Colors.black87,fontWeight: FontWeight.w900)
+                          ),
+                        )],
+                    ),
+                ),
                 SizedBox(width: 20,),
+
               ],
             ))
 

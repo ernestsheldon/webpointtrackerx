@@ -133,10 +133,10 @@ class _PointViewListState extends State<PointViewList> {
                                                                     .id)
                                                                 .update({
                                                               "pointdate":
-                                                                  _pointDate.text,
+                                                                  _pointDate.text.trim(),
                                                               "pointvalue":
                                                                   _pointValue
-                                                                      .text,
+                                                                      .text.trim(),
                                                             });
                                                           });
                                                           final snackBar =   SnackBar(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:webpointtracker/controllers/auth_controller.dart';
 
 import 'package:webpointtracker/views/pointviewlist.dart';
 
@@ -115,12 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           dropdownValue, context);
                     });
                   },
-                  child: Icon(Icons.save_sharp)),
+                  child: Icon(Icons.alarm_off)),
               SizedBox(width: 10),
 
               ElevatedButton(
                   onPressed: () {
-                    Get.toNamed("splashpage");
+                    AuthController.instance.logOut();
                   }, child: Icon(Icons.arrow_back)),
               SizedBox(width: 10),
 
