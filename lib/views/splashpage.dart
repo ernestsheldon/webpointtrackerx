@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: [
             Image.asset(
-            "maxresdefault.jpg",scale: 1.0,),
+            "spring.jpg",scale: 1.0,),
               ElevatedButton(onPressed: (){
                 Get.toNamed("Homepage");
               }, child: Text("go to home page"))

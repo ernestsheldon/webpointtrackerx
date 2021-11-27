@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: "/",
       getPages: [
-        GetPage(name: "/", page: ()=> MyHomePage(title: "Work Place app")),
+        GetPage(name: "/", page: ()=> LoginPage()),//MyHomePage(title: "Work Place app")),
         GetPage(name: "/splashpage", page: ()=> SplashScreen()),
         GetPage(name: "/loginpage", page: ()=> LoginPage()),
         GetPage(name: "/registerpage", page: ()=> RegisterPage()),
