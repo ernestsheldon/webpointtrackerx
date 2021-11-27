@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webpointtracker/controllers/auth_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,6 +11,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(""),
@@ -28,6 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             Expanded(
               flex: 1,
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'Enter Email here',
@@ -37,6 +42,7 @@ class _LoginPageState extends State<LoginPage> {
             Expanded(
               flex: 1,
               child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
@@ -52,11 +58,16 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(width: 20,),
                 Expanded(
                   flex: 4,
-                    child: ElevatedButton(child: Text("login"),onPressed: () {},)),
+                    child: ElevatedButton(child: Text("login"),onPressed: () {
+
+                    },)),
                 SizedBox(width: 20,),
                 Expanded(
                     flex: 4,
-                    child: ElevatedButton(child: Text("Create Account"),onPressed: () {},)),
+                    child: ElevatedButton(child: Text("Create Account"),onPressed: () {
+                      AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
+
+                    },)),
                 SizedBox(width: 20,),
               ],
             ))

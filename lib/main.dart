@@ -8,9 +8,11 @@ import 'package:webpointtracker/views/splashpage.dart';
 import 'package:webpointtracker/views/spring_feed_calculator.dart';
 import 'package:get/get.dart';
 
+import 'controllers/auth_controller.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp().then((value) => Get.put(AuthController()));
   runApp(MyApp());
 }
 
